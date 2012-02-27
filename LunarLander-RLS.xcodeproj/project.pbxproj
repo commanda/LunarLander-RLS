@@ -146,6 +146,9 @@
 		90216D2814FAD2AA00B5B33D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90216D2714FAD2AA00B5B33D /* RootViewController.m */; };
 		90216D2B14FAD2AA00B5B33D /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90216D2A14FAD2AA00B5B33D /* HelloWorldLayer.m */; };
 		90216D2E14FAD2AA00B5B33D /* grossini_dance_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 90216D2D14FAD2AA00B5B33D /* grossini_dance_atlas.png */; };
+		9034BB1E14FB30F4000B6071 /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 9034BB1B14FB30F4000B6071 /* rock.png */; };
+		9034BB2214FB39EB000B6071 /* flames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9034BB2014FB39EB000B6071 /* flames.plist */; };
+		9034BB2314FB39EB000B6071 /* flames.png in Resources */ = {isa = PBXBuildFile; fileRef = 9034BB2114FB39EB000B6071 /* flames.png */; };
 		90890CFC14FAF50E00132FC9 /* AWLunarLanderGameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90890CFB14FAF50E00132FC9 /* AWLunarLanderGameLayer.m */; };
 		90890CFE14FAFB3200132FC9 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 90890CFD14FAFB3200132FC9 /* background.png */; };
 		90890D0014FAFF7400132FC9 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 90890CFF14FAFF7300132FC9 /* Default-Portrait~ipad.png */; };
@@ -444,6 +447,9 @@
 		90216D2A14FAD2AA00B5B33D /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		90216D2C14FAD2AA00B5B33D /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		90216D2D14FAD2AA00B5B33D /* grossini_dance_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grossini_dance_atlas.png; path = Resources/grossini_dance_atlas.png; sourceTree = "<group>"; };
+		9034BB1B14FB30F4000B6071 /* rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rock.png; path = Resources/rock.png; sourceTree = "<group>"; };
+		9034BB2014FB39EB000B6071 /* flames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = flames.plist; path = Resources/flames.plist; sourceTree = "<group>"; };
+		9034BB2114FB39EB000B6071 /* flames.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flames.png; path = Resources/flames.png; sourceTree = "<group>"; };
 		90890CFA14FAF50E00132FC9 /* AWLunarLanderGameLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWLunarLanderGameLayer.h; sourceTree = "<group>"; };
 		90890CFB14FAF50E00132FC9 /* AWLunarLanderGameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWLunarLanderGameLayer.m; sourceTree = "<group>"; };
 		90890CFD14FAFB3200132FC9 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/background.png; sourceTree = "<group>"; };
@@ -528,6 +534,9 @@
 		90216B7614FAD2A300B5B33D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				9034BB2014FB39EB000B6071 /* flames.plist */,
+				9034BB2114FB39EB000B6071 /* flames.png */,
+				9034BB1B14FB30F4000B6071 /* rock.png */,
 				90890CFF14FAFF7300132FC9 /* Default-Portrait~ipad.png */,
 				90890D0414FB054A00132FC9 /* ship.png */,
 				90890CFD14FAFB3200132FC9 /* background.png */,
@@ -1014,6 +1023,9 @@
 				90890CFE14FAFB3200132FC9 /* background.png in Resources */,
 				90890D0014FAFF7400132FC9 /* Default-Portrait~ipad.png in Resources */,
 				90890D0514FB054A00132FC9 /* ship.png in Resources */,
+				9034BB1E14FB30F4000B6071 /* rock.png in Resources */,
+				9034BB2214FB39EB000B6071 /* flames.plist in Resources */,
+				9034BB2314FB39EB000B6071 /* flames.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
