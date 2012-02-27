@@ -12,7 +12,7 @@
 @implementation AWLunarLanderGameLayer
 
 
-+(id) scene
++(CCScene *) scene
 {
 	
 	CCScene *scene = [CCScene node];
@@ -24,6 +24,25 @@
 	return scene;
 }
 
+
+-(id)init
+{
+	
+	self = [super init];
+	
+	if(self)
+	{
+		
+		// Create the background from its image file and add it as a layer 
+		CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
+		background.anchorPoint = ccp(0,0);
+		background.position = ccp(0,0);
+		[self addChild:background];
+	}
+	
+	return self;
+	
+}
 
 
 @end
