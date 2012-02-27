@@ -55,6 +55,7 @@
 		shipSprite.anchorPoint = ccp(0.5, 0.5);
 		
 		[shipSprite startOver];
+		[shipSprite startGravity];
 		
 		// Add the ship to the screen
 		[self addChild:shipSprite z:SHIP_Z];

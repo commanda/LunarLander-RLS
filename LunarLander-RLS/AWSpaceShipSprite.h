@@ -18,4 +18,9 @@
  */
 -(void)startOver;
 
+/*
+ Starts gravity pulling on the space ship. 
+ */
+-(void)startGravity;
+
 @end

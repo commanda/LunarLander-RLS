@@ -8,6 +8,8 @@
 
 #import "AWSpaceShipSprite.h"
 
+#define GRAVITY_RATE 10.0
+
 
 @implementation AWSpaceShipSprite
 
@@ -27,6 +29,22 @@
 {
 	CGSize winSize = [[CCDirector sharedDirector] winSize];
 	self.position = ccp(winSize.width/2, winSize.height - 100);
+}
+
+-(void)startGravity
+{
+	[self scheduleUpdate];
+}
+
+-(void)update:(ccTime)dt
+{
+	
+	CGFloat nextY = self.position.y - dt * GRAVITY_RATE;
+	
+	CGPoint nextPosition = ccp(self.position.x, nextY);
+	
+	self.position = nextPosition;
+	
 }
 
 @end
