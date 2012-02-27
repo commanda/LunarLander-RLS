@@ -1,5 +1,5 @@
 //
-//  AWLunarLanderGameLayer.h
+//  AWSpaceShipSprite.h
 //  LunarLander-RLS
 //
 //  Created by awixted on 2/26/12.
@@ -9,13 +9,13 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@class AWSpaceShipSprite;
-
-@interface AWLunarLanderGameLayer : CCLayer 
+@interface AWSpaceShipSprite : CCSprite 
 {
-    AWSpaceShipSprite *shipSprite;
 }
 
-+(CCScene *) scene;
+/*
+ Reset the ship to its starting position.
+ */
+-(void)startOver;
 
 @end

@@ -149,6 +149,8 @@
 		90890CFC14FAF50E00132FC9 /* AWLunarLanderGameLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90890CFB14FAF50E00132FC9 /* AWLunarLanderGameLayer.m */; };
 		90890CFE14FAFB3200132FC9 /* background.png in Resources */ = {isa = PBXBuildFile; fileRef = 90890CFD14FAFB3200132FC9 /* background.png */; };
 		90890D0014FAFF7400132FC9 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 90890CFF14FAFF7300132FC9 /* Default-Portrait~ipad.png */; };
+		90890D0314FB02AA00132FC9 /* AWSpaceShipSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 90890D0214FB02AA00132FC9 /* AWSpaceShipSprite.m */; };
+		90890D0514FB054A00132FC9 /* ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 90890D0414FB054A00132FC9 /* ship.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -446,6 +448,9 @@
 		90890CFB14FAF50E00132FC9 /* AWLunarLanderGameLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWLunarLanderGameLayer.m; sourceTree = "<group>"; };
 		90890CFD14FAFB3200132FC9 /* background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = background.png; path = Resources/background.png; sourceTree = "<group>"; };
 		90890CFF14FAFF7300132FC9 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-Portrait~ipad.png"; sourceTree = "<group>"; };
+		90890D0114FB02AA00132FC9 /* AWSpaceShipSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWSpaceShipSprite.h; sourceTree = "<group>"; };
+		90890D0214FB02AA00132FC9 /* AWSpaceShipSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWSpaceShipSprite.m; sourceTree = "<group>"; };
+		90890D0414FB054A00132FC9 /* ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship.png; path = Resources/ship.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -511,6 +516,8 @@
 				90216D2A14FAD2AA00B5B33D /* HelloWorldLayer.m */,
 				90890CFA14FAF50E00132FC9 /* AWLunarLanderGameLayer.h */,
 				90890CFB14FAF50E00132FC9 /* AWLunarLanderGameLayer.m */,
+				90890D0114FB02AA00132FC9 /* AWSpaceShipSprite.h */,
+				90890D0214FB02AA00132FC9 /* AWSpaceShipSprite.m */,
 				90216D2C14FAD2AA00B5B33D /* GameConfig.h */,
 				90216B7614FAD2A300B5B33D /* Resources */,
 				90216B8A14FAD2A300B5B33D /* libs */,
@@ -522,6 +529,7 @@
 		90216B7614FAD2A300B5B33D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				90890D0414FB054A00132FC9 /* ship.png */,
 				90890CFD14FAFB3200132FC9 /* background.png */,
 				90216B7714FAD2A300B5B33D /* Default.png */,
 				90216B7914FAD2A300B5B33D /* fps_images.png */,
@@ -1005,6 +1013,7 @@
 				90216D2E14FAD2AA00B5B33D /* grossini_dance_atlas.png in Resources */,
 				90890CFE14FAFB3200132FC9 /* background.png in Resources */,
 				90890D0014FAFF7400132FC9 /* Default-Portrait~ipad.png in Resources */,
+				90890D0514FB054A00132FC9 /* ship.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1137,6 +1146,7 @@
 				90216D2814FAD2AA00B5B33D /* RootViewController.m in Sources */,
 				90216D2B14FAD2AA00B5B33D /* HelloWorldLayer.m in Sources */,
 				90890CFC14FAF50E00132FC9 /* AWLunarLanderGameLayer.m in Sources */,
+				90890D0314FB02AA00132FC9 /* AWSpaceShipSprite.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
