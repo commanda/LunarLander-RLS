@@ -12,6 +12,7 @@
 @interface AWSpaceShipSprite : CCSprite 
 {
 	CCSprite *flames;
+	float currentVelocity;
 }
 
 /*

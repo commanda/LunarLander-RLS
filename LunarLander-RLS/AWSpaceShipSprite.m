@@ -8,7 +8,7 @@
 
 #import "AWSpaceShipSprite.h"
 
-#define GRAVITY_RATE 10.0
+#define ACCELERATION 10.0
 
 
 @implementation AWSpaceShipSprite
@@ -19,7 +19,7 @@
 	
 	if(self)
 	{
-
+		currentVelocity = 0;
 		
 		// Create the 2-frame sprite animation for the flames
 		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"flames.plist"];
@@ -72,8 +72,9 @@
 
 -(void)update:(ccTime)dt
 {
+	currentVelocity = currentVelocity + ACCELERATION;
 	
-	CGFloat nextY = self.position.y - dt * GRAVITY_RATE;
+	CGFloat nextY = self.position.y - dt * currentVelocity;
 	
 	CGPoint nextPosition = ccp(self.position.x, nextY);
 	
