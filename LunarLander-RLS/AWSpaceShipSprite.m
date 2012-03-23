@@ -10,6 +10,9 @@
 
 #define ACCELERATION 10.0
 
+#define START_Y (winSize.height - 100)
+#define MOON_SURFACE_Y 150
+
 
 @implementation AWSpaceShipSprite
 
@@ -39,8 +42,10 @@
 		
 		// Now that we've got our array full of sprite frames, make an animation object
 		CCAnimation *animation = [CCAnimation animationWithFrames:framesArray delay:0.1];
+		
 		// Make an action out of it - that runs frame 0 then frame 1
 		CCAnimate *animateAction = [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO];
+		
 		// Repeat that animation action forever
 		CCAction *action = [CCRepeatForever actionWithAction:animateAction];
 		
@@ -62,7 +67,7 @@
 -(void)startOver
 {
 	CGSize winSize = [[CCDirector sharedDirector] winSize];
-	self.position = ccp(winSize.width/2, winSize.height - 100);
+	self.position = ccp(winSize.width/2, START_Y);
 }
 
 -(void)startGravity
@@ -72,13 +77,19 @@
 
 -(void)update:(ccTime)dt
 {
-	currentVelocity = currentVelocity + ACCELERATION;
+	currentVelocity = currentVelocity + (ACCELERATION * dt);
 	
-	CGFloat nextY = self.position.y - dt * currentVelocity;
+	CGFloat nextY = self.position.y - currentVelocity;
 	
 	CGPoint nextPosition = ccp(self.position.x, nextY);
 	
 	self.position = nextPosition;
+	
+	// Have we hit the surface of the moon? If so, we don't go any further down.
+	if(self.position.y <= MOON_SURFACE_Y)
+	{
+		self.position = ccp(self.position.x, MOON_SURFACE_Y);
+	}
 	
 }
 

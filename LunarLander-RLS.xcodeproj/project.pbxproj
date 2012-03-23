@@ -146,6 +146,7 @@
 		90216D2814FAD2AA00B5B33D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90216D2714FAD2AA00B5B33D /* RootViewController.m */; };
 		90216D2B14FAD2AA00B5B33D /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90216D2A14FAD2AA00B5B33D /* HelloWorldLayer.m */; };
 		90216D2E14FAD2AA00B5B33D /* grossini_dance_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 90216D2D14FAD2AA00B5B33D /* grossini_dance_atlas.png */; };
+		902191A614FE90300095C61B /* moon-surface.png in Resources */ = {isa = PBXBuildFile; fileRef = 902191A514FE90300095C61B /* moon-surface.png */; };
 		9034BB1E14FB30F4000B6071 /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 9034BB1B14FB30F4000B6071 /* rock.png */; };
 		9034BB2214FB39EB000B6071 /* flames.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9034BB2014FB39EB000B6071 /* flames.plist */; };
 		9034BB2314FB39EB000B6071 /* flames.png in Resources */ = {isa = PBXBuildFile; fileRef = 9034BB2114FB39EB000B6071 /* flames.png */; };
@@ -447,6 +448,7 @@
 		90216D2A14FAD2AA00B5B33D /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		90216D2C14FAD2AA00B5B33D /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		90216D2D14FAD2AA00B5B33D /* grossini_dance_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grossini_dance_atlas.png; path = Resources/grossini_dance_atlas.png; sourceTree = "<group>"; };
+		902191A514FE90300095C61B /* moon-surface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "moon-surface.png"; path = "Resources/moon-surface.png"; sourceTree = "<group>"; };
 		9034BB1B14FB30F4000B6071 /* rock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rock.png; path = Resources/rock.png; sourceTree = "<group>"; };
 		9034BB2014FB39EB000B6071 /* flames.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = flames.plist; path = Resources/flames.plist; sourceTree = "<group>"; };
 		9034BB2114FB39EB000B6071 /* flames.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = flames.png; path = Resources/flames.png; sourceTree = "<group>"; };
@@ -534,14 +536,13 @@
 		90216B7614FAD2A300B5B33D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				90890CFD14FAFB3200132FC9 /* background.png */,
+				90890CFF14FAFF7300132FC9 /* Default-Portrait~ipad.png */,
+				90216B7714FAD2A300B5B33D /* Default.png */,
 				9034BB2014FB39EB000B6071 /* flames.plist */,
 				9034BB2114FB39EB000B6071 /* flames.png */,
-				9034BB1B14FB30F4000B6071 /* rock.png */,
-				90890CFF14FAFF7300132FC9 /* Default-Portrait~ipad.png */,
-				90890D0414FB054A00132FC9 /* ship.png */,
-				90890CFD14FAFB3200132FC9 /* background.png */,
-				90216B7714FAD2A300B5B33D /* Default.png */,
 				90216B7914FAD2A300B5B33D /* fps_images.png */,
+				90216D2D14FAD2AA00B5B33D /* grossini_dance_atlas.png */,
 				90216B7B14FAD2A300B5B33D /* Icon-72.png */,
 				90216B7D14FAD2A300B5B33D /* Icon-Small-50.png */,
 				90216B7F14FAD2A300B5B33D /* Icon-Small.png */,
@@ -550,7 +551,9 @@
 				90216B8514FAD2A300B5B33D /* Icon@2x.png */,
 				90216B8714FAD2A300B5B33D /* Info.plist */,
 				90216B8814FAD2A300B5B33D /* iTunesArtwork */,
-				90216D2D14FAD2AA00B5B33D /* grossini_dance_atlas.png */,
+				902191A514FE90300095C61B /* moon-surface.png */,
+				9034BB1B14FB30F4000B6071 /* rock.png */,
+				90890D0414FB054A00132FC9 /* ship.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -986,7 +989,7 @@
 		90216B5814FAD2A000B5B33D /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0420;
+				LastUpgradeCheck = 0430;
 			};
 			buildConfigurationList = 90216B5B14FAD2A000B5B33D /* Build configuration list for PBXProject "LunarLander-RLS" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -1026,6 +1029,7 @@
 				9034BB1E14FB30F4000B6071 /* rock.png in Resources */,
 				9034BB2214FB39EB000B6071 /* flames.plist in Resources */,
 				9034BB2314FB39EB000B6071 /* flames.png in Resources */,
+				902191A614FE90300095C61B /* moon-surface.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1210,6 +1214,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LunarLander-RLS/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LunarLander-RLS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";
@@ -1229,6 +1234,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LunarLander-RLS/Prefix.pch";
 				"GCC_THUMB_SUPPORT[arch=armv6]" = "";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LunarLander-RLS/Resources/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-lz";

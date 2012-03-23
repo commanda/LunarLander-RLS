@@ -10,7 +10,8 @@
 #import "AWSpaceShipSprite.h"
 
 #define BACKGROUND_Z 1
-#define SHIP_Z 2
+#define SURFACE_Z 2
+#define SHIP_Z 3
 
 @implementation AWLunarLanderGameLayer
 
@@ -59,6 +60,20 @@
 		
 		// Add the ship to the screen
 		[self addChild:shipSprite z:SHIP_Z];
+		
+		// Create the surface of the moon
+		CCSprite *surface = [CCSprite spriteWithFile:@"moon-surface.png"];
+		surface.anchorPoint = ccp(0,0);
+		surface.position = ccp(0,0);
+		[self addChild:surface z:SURFACE_Z];
+		
+		// The user is not yet touching the screen
+		isTouchingScreen = NO;
+		
+		// register to receive targeted touch events
+        [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self
+														 priority:0
+												  swallowsTouches:YES];
 	}
 	
 	return self;
@@ -71,5 +86,26 @@
 	[super dealloc];
 }
 
+
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event 
+{
+	
+	isTouchingScreen = YES;
+	
+	return YES;
+}
+
+-(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	// The user lifted their finger off the screen
+	isTouchingScreen = NO;
+}
+
+-(void)ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	
+	// The user's touch event was interrupted 
+	isTouchingScreen = NO;
+}
 
 @end

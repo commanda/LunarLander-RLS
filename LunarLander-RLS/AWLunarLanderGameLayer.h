@@ -11,9 +11,10 @@
 
 @class AWSpaceShipSprite;
 
-@interface AWLunarLanderGameLayer : CCLayer 
+@interface AWLunarLanderGameLayer : CCLayer <CCTargetedTouchDelegate>
 {
     AWSpaceShipSprite *shipSprite;
+	BOOL isTouchingScreen;
 }
 
 +(CCScene *) scene;
