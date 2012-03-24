@@ -155,6 +155,7 @@
 		90890D0014FAFF7400132FC9 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = 90890CFF14FAFF7300132FC9 /* Default-Portrait~ipad.png */; };
 		90890D0314FB02AA00132FC9 /* AWSpaceShipSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 90890D0214FB02AA00132FC9 /* AWSpaceShipSprite.m */; };
 		90890D0514FB054A00132FC9 /* ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 90890D0414FB054A00132FC9 /* ship.png */; };
+		908EAF61151E2560008FB577 /* LiquidCrystal-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 908EAF60151E2560008FB577 /* LiquidCrystal-Bold.otf */; };
 		90EC6B8A151D5DC400976862 /* restart-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 90EC6B89151D5DC400976862 /* restart-button.png */; };
 /* End PBXBuildFile section */
 
@@ -460,6 +461,7 @@
 		90890D0114FB02AA00132FC9 /* AWSpaceShipSprite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AWSpaceShipSprite.h; sourceTree = "<group>"; };
 		90890D0214FB02AA00132FC9 /* AWSpaceShipSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWSpaceShipSprite.m; sourceTree = "<group>"; };
 		90890D0414FB054A00132FC9 /* ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship.png; path = Resources/ship.png; sourceTree = "<group>"; };
+		908EAF60151E2560008FB577 /* LiquidCrystal-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LiquidCrystal-Bold.otf"; path = "Resources/LiquidCrystal-Bold.otf"; sourceTree = "<group>"; };
 		90EC6B89151D5DC400976862 /* restart-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "restart-button.png"; path = "Resources/restart-button.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -538,6 +540,7 @@
 		90216B7614FAD2A300B5B33D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				908EAF60151E2560008FB577 /* LiquidCrystal-Bold.otf */,
 				90EC6B89151D5DC400976862 /* restart-button.png */,
 				90890CFD14FAFB3200132FC9 /* background.png */,
 				90890CFF14FAFF7300132FC9 /* Default-Portrait~ipad.png */,
@@ -1034,6 +1037,7 @@
 				9034BB2314FB39EB000B6071 /* flames.png in Resources */,
 				902191A614FE90300095C61B /* moon-surface.png in Resources */,
 				90EC6B8A151D5DC400976862 /* restart-button.png in Resources */,
+				908EAF61151E2560008FB577 /* LiquidCrystal-Bold.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

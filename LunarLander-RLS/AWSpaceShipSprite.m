@@ -85,6 +85,11 @@
 	[self scheduleUpdate];
 }
 
+-(int)altitude
+{
+	return self.position.y - MOON_SURFACE_Y;
+}
+
 -(void)isPushingThruster:(BOOL)value
 {
 	flames.visible = value;

@@ -38,5 +38,10 @@
  */
 -(void)isPushingThruster:(BOOL)value;
 
+/*
+ Returns the altitude relative to the landing spot
+ */
+-(int)altitude;
+
 
 @end

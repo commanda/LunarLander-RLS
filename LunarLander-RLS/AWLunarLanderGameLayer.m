@@ -12,7 +12,9 @@
 #define BACKGROUND_Z 1
 #define SURFACE_Z 2
 #define SHIP_Z 3
-#define RESTART_BUTTON_Z 4
+#define HUD_Z 4
+
+#define GAME_FONT @"LiquidCrystal-Bold.otf"
 
 @implementation AWLunarLanderGameLayer
 
@@ -76,10 +78,17 @@
 		menu = [CCMenu menuWithItems:restartButton, nil];
 		menu.position = ccp(winSize.width - 10, winSize.height - 10);
 		menu.anchorPoint = ccp(1,1);
-		[self addChild:menu z:RESTART_BUTTON_Z];
+		[self addChild:menu z:HUD_Z];
 		
 		// The menu starts off as invisible
 		menu.visible = NO;
+		
+		// Create the altitude display
+		altitudeLabel = [CCLabelTTF labelWithString:@"ALTITUDE: " fontName:GAME_FONT fontSize:40];
+		altitudeLabel.anchorPoint = ccp(0,1);
+		altitudeLabel.position = ccp(10, winSize.height - 20);
+		[self addChild:altitudeLabel z:HUD_Z];
+		
 		
 		// The user is not yet touching the screen
 		isTouchingScreen = NO;
@@ -127,6 +136,10 @@
 			[shipSprite pushThruster:dt];
 		}
 	}
+	
+	// Update the altitude label's number using the y position of the spaceship
+	int altitude = [shipSprite altitude];
+	altitudeLabel.string = [NSString stringWithFormat:@"ALTITUDE: %d", altitude];
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event 

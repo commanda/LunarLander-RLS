@@ -16,6 +16,7 @@
     AWSpaceShipSprite *shipSprite;
 	BOOL isTouchingScreen;
 	CCMenu *menu;
+	CCLabelTTF *altitudeLabel;
 }
 
 +(CCScene *) scene;
