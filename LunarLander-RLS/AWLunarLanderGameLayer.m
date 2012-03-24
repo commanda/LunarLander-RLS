@@ -134,6 +134,9 @@
 	
 	isTouchingScreen = YES;
 	
+	// Tell the ship that the thruster should appear activated
+	[shipSprite isPushingThruster:YES];
+	
 	return YES;
 }
 
@@ -141,6 +144,9 @@
 {
 	// The user lifted their finger off the screen
 	isTouchingScreen = NO;
+	
+	// Tell the ship that the thruster should stop appearing activated
+	[shipSprite isPushingThruster:NO];
 }
 
 -(void)ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
@@ -148,6 +154,9 @@
 	
 	// The user's touch event was interrupted 
 	isTouchingScreen = NO;
+
+	// Tell the ship that the thruster should stop appearing activated
+	[shipSprite isPushingThruster:NO];
 }
 
 @end

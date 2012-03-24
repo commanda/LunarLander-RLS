@@ -59,6 +59,9 @@
 		flames.position = ccp(self.boundingBox.size.width/2, 0);
 		[self addChild:flames z:-1];
 		
+		// The flames start out as invisible because they only show up when the user is activating the thruster.
+		flames.visible = NO;
+		
 		// Tell the flames to animate with the animation action we made for it
 		[flames runAction:action];
 		
@@ -80,6 +83,11 @@
 -(void)startGravity
 {
 	[self scheduleUpdate];
+}
+
+-(void)isPushingThruster:(BOOL)value
+{
+	flames.visible = value;
 }
 
 -(void)pushThruster:(ccTime)dt
