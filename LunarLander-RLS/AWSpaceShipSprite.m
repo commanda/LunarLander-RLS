@@ -77,6 +77,7 @@
 	CGSize winSize = [[CCDirector sharedDirector] winSize];
 	self.position = ccp(winSize.width/2, START_Y);
 	self.didCrash = NO;
+	self.didLand = NO;
 	currentVelocity = 0;
 	[self unscheduleUpdate];
 }

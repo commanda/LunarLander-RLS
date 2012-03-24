@@ -156,6 +156,8 @@
 		90890D0314FB02AA00132FC9 /* AWSpaceShipSprite.m in Sources */ = {isa = PBXBuildFile; fileRef = 90890D0214FB02AA00132FC9 /* AWSpaceShipSprite.m */; };
 		90890D0514FB054A00132FC9 /* ship.png in Resources */ = {isa = PBXBuildFile; fileRef = 90890D0414FB054A00132FC9 /* ship.png */; };
 		908EAF61151E2560008FB577 /* LiquidCrystal-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 908EAF60151E2560008FB577 /* LiquidCrystal-Bold.otf */; };
+		908EAF65151E2B68008FB577 /* lose-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 908EAF63151E2B68008FB577 /* lose-image.png */; };
+		908EAF66151E2B68008FB577 /* won-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 908EAF64151E2B68008FB577 /* won-image.png */; };
 		90EC6B8A151D5DC400976862 /* restart-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 90EC6B89151D5DC400976862 /* restart-button.png */; };
 /* End PBXBuildFile section */
 
@@ -462,6 +464,8 @@
 		90890D0214FB02AA00132FC9 /* AWSpaceShipSprite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AWSpaceShipSprite.m; sourceTree = "<group>"; };
 		90890D0414FB054A00132FC9 /* ship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = ship.png; path = Resources/ship.png; sourceTree = "<group>"; };
 		908EAF60151E2560008FB577 /* LiquidCrystal-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LiquidCrystal-Bold.otf"; path = "Resources/LiquidCrystal-Bold.otf"; sourceTree = "<group>"; };
+		908EAF63151E2B68008FB577 /* lose-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "lose-image.png"; path = "Resources/lose-image.png"; sourceTree = "<group>"; };
+		908EAF64151E2B68008FB577 /* won-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "won-image.png"; path = "Resources/won-image.png"; sourceTree = "<group>"; };
 		90EC6B89151D5DC400976862 /* restart-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "restart-button.png"; path = "Resources/restart-button.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -540,6 +544,8 @@
 		90216B7614FAD2A300B5B33D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				908EAF63151E2B68008FB577 /* lose-image.png */,
+				908EAF64151E2B68008FB577 /* won-image.png */,
 				908EAF60151E2560008FB577 /* LiquidCrystal-Bold.otf */,
 				90EC6B89151D5DC400976862 /* restart-button.png */,
 				90890CFD14FAFB3200132FC9 /* background.png */,
@@ -1038,6 +1044,8 @@
 				902191A614FE90300095C61B /* moon-surface.png in Resources */,
 				90EC6B8A151D5DC400976862 /* restart-button.png in Resources */,
 				908EAF61151E2560008FB577 /* LiquidCrystal-Bold.otf in Resources */,
+				908EAF65151E2B68008FB577 /* lose-image.png in Resources */,
+				908EAF66151E2B68008FB577 /* won-image.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

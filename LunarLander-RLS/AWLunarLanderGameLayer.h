@@ -17,6 +17,8 @@
 	BOOL isTouchingScreen;
 	CCMenu *menu;
 	CCLabelTTF *altitudeLabel;
+	CCSprite *wonSprite;
+	CCSprite *loseSprite;
 }
 
 +(CCScene *) scene;

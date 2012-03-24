@@ -89,6 +89,16 @@
 		altitudeLabel.position = ccp(10, winSize.height - 20);
 		[self addChild:altitudeLabel z:HUD_Z];
 		
+		// Create the won and lost sprites
+		wonSprite = [CCSprite spriteWithFile:@"won-image.png"];
+		wonSprite.position = ccp(winSize.width/2, winSize.height/2);
+		wonSprite.visible = NO;
+		[self addChild:wonSprite z:HUD_Z];
+		
+		loseSprite = [CCSprite spriteWithFile:@"lose-image.png"];
+		loseSprite.position = ccp(winSize.width/2, winSize.height/2);
+		loseSprite.visible = NO;
+		[self addChild:loseSprite z:HUD_Z];
 		
 		// The user is not yet touching the screen
 		isTouchingScreen = NO;
@@ -116,17 +126,37 @@
 {
 	NSLog(@"restart");
 	
+	// Remove the win/loss sprite from the screen
+	wonSprite.visible = NO;
+	loseSprite.visible = NO;
+	
+	// Tell the ship to prepare itself for restarting the game
 	[shipSprite startOver];
 	[shipSprite startGravity];
 }
 
 -(void)update:(ccTime)dt
 {
-	// Check to see if the game is over - if the space ship has crashed or landed successfully
-	if(shipSprite.didCrash)
+	
+	// Check to see if the game is over
+	if(shipSprite.didLand)
 	{
+		
+		// Check if we've already handled
+		
 		// Show the restart button so the player can restart the game
 		menu.visible = YES;
+		
+		if(shipSprite.didCrash)
+		{
+			// The player lost because the ship crash landed
+			loseSprite.visible = YES;
+		}
+		else 
+		{
+			// The player won because the ship didn't crash land
+			wonSprite.visible = YES;
+		}
 	}
 	// If we haven't crashed, see if we need to update the thruster velocity on the spaceship
 	else 
