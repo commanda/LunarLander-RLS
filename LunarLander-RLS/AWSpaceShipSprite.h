@@ -44,5 +44,14 @@
  */
 -(int)altitude;
 
+/*
+ Returns a new flames sprite that's animating
+ */
+-(CCSprite *)animatingFlamesSprite;
+
+/*
+ Become engulfed in flames!
+ */
+-(void)becomeEngulfedInFlames;
 
 @end

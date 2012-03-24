@@ -32,28 +32,8 @@
 		CCSpriteBatchNode *batchNode = [CCSpriteBatchNode batchNodeWithFile:@"flames.png"];
 		[self addChild:batchNode];
 		
-		// Put these two frames into an array
-		NSMutableArray *framesArray = [NSMutableArray array];
-		for(int i = 0; i < 2; i++)
-		{
-			// flame-sprite-0.png and flame-sprite-1.png
-			NSString *frameName = [NSString stringWithFormat:@"flame-sprite-%d.png", i];
-			
-			// Get the frame from the sprite cache and put it into our array to make the animation with
-			[framesArray addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:frameName]];
-		}
-		
-		// Now that we've got our array full of sprite frames, make an animation object
-		CCAnimation *animation = [CCAnimation animationWithFrames:framesArray delay:0.1];
-		
-		// Make an action out of it - that runs frame 0 then frame 1
-		CCAnimate *animateAction = [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO];
-		
-		// Repeat that animation action forever
-		CCAction *action = [CCRepeatForever actionWithAction:animateAction];
-		
-		// Create the flames sprite object that we'll add the frames to for animating
-		flames = [CCSprite spriteWithSpriteFrameName:@"flame-sprite-0.png"];
+		// Get the flames animation from our creator function
+		flames = [self animatingFlamesSprite];
 		
 		// Anchor it in the middle horizontally and vertically
 		flames.anchorPoint = ccp(0.5, 0.5);
@@ -63,13 +43,41 @@
 		// The flames start out as invisible because they only show up when the user is activating the thruster.
 		flames.visible = NO;
 		
-		// Tell the flames to animate with the animation action we made for it
-		[flames runAction:action];
-		
 		[self startOver];
 	}
 	
 	return self;
+}
+
+-(CCSprite *)animatingFlamesSprite
+{
+	// Get the two flame frames from the sprite frame cache and put them into an array
+	NSMutableArray *framesArray = [NSMutableArray array];
+	for(int i = 0; i < 2; i++)
+	{
+		// flame-sprite-0.png and flame-sprite-1.png
+		NSString *frameName = [NSString stringWithFormat:@"flame-sprite-%d.png", i];
+		
+		// Get the frame from the sprite cache and put it into our array to make the animation with
+		[framesArray addObject:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:frameName]];
+	}
+	
+	// Now that we've got our array full of sprite frames, make an animation object
+	CCAnimation *animation = [CCAnimation animationWithFrames:framesArray delay:0.1];
+	
+	// Make an action out of it - that runs frame 0 then frame 1
+	CCAnimate *animateAction = [CCAnimate actionWithAnimation:animation restoreOriginalFrame:NO];
+	
+	// Repeat that animation action forever
+	CCAction *action = [CCRepeatForever actionWithAction:animateAction];
+	
+	// Create the flames sprite object that we'll add the frames to for animating
+	CCSprite *flamesSprite = [CCSprite spriteWithSpriteFrameName:@"flame-sprite-0.png"];
+
+	// Tell the flames to animate with the animation action we made for it
+	[flamesSprite runAction:action];
+	
+	return flamesSprite;
 }
 
 -(void)startOver
@@ -137,6 +145,26 @@
 		}
 	}
 	
+}
+
+-(void)becomeEngulfedInFlames
+{
+	for(int i = 0; i < 10; i++)
+	{
+		CCSprite *moreFlames = [self animatingFlamesSprite];
+		
+		// Put the anchor point at the middle of the top of this sprite because visually that's where the flames sprout from
+		moreFlames.anchorPoint = ccp(0.5, 1);
+		
+		// Give the flames a random degree of rotation, anywhere from 0 to 359 degrees
+		moreFlames.rotation = arc4random() % 360;
+		
+		// The flames will all sprout from the center of the spaceship
+		moreFlames.position = ccp(self.boundingBox.size.width/2, self.boundingBox.size.height/2);
+		
+		[self addChild:moreFlames];
+		
+	}
 }
 
 @end

@@ -130,6 +130,8 @@
 	wonSprite.visible = NO;
 	loseSprite.visible = NO;
 	
+	handledGameover = NO;
+	
 	// Tell the ship to prepare itself for restarting the game
 	[shipSprite startOver];
 	[shipSprite startGravity];
@@ -142,20 +144,27 @@
 	if(shipSprite.didLand)
 	{
 		
-		// Check if we've already handled
-		
-		// Show the restart button so the player can restart the game
-		menu.visible = YES;
-		
-		if(shipSprite.didCrash)
+		// Check if we've already handled the gameover transition
+		if(!handledGameover)
 		{
-			// The player lost because the ship crash landed
-			loseSprite.visible = YES;
-		}
-		else 
-		{
-			// The player won because the ship didn't crash land
-			wonSprite.visible = YES;
+
+			// Show the restart button so the player can restart the game
+			menu.visible = YES;
+			
+			if(shipSprite.didCrash)
+			{
+				// The player lost because the ship crash landed
+				loseSprite.visible = YES;
+				[shipSprite becomeEngulfedInFlames];
+			}
+			else 
+			{
+				// The player won because the ship didn't crash land
+				wonSprite.visible = YES;
+			}
+			
+			// Now we have handled transitioning to the gameover state - we don't want to do that again until the player restarts and then wins or loses again
+			handledGameover = YES;
 		}
 	}
 	// If we haven't crashed, see if we need to update the thruster velocity on the spaceship

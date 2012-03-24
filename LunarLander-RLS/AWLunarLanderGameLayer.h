@@ -19,6 +19,7 @@
 	CCLabelTTF *altitudeLabel;
 	CCSprite *wonSprite;
 	CCSprite *loseSprite;
+	BOOL handledGameover;
 }
 
 +(CCScene *) scene;
