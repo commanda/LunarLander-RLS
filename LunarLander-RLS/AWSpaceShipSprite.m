@@ -9,7 +9,7 @@
 #import "AWSpaceShipSprite.h"
 
 #define ACCELERATION 10.0
-#define THRUST_ACCELERATION 5.0
+#define THRUST_ACCELERATION 20.0
 #define START_Y (winSize.height - 100)
 #define MOON_SURFACE_Y 150
 #define CRASH_VELOCITY 10
@@ -74,7 +74,6 @@
 	self.position = ccp(winSize.width/2, START_Y);
 	self.didCrash = NO;
 	currentVelocity = 0;
-	thrusterVelocity = 0;
 	[self unscheduleUpdate];
 }
 
@@ -83,31 +82,38 @@
 	[self scheduleUpdate];
 }
 
+-(void)pushThruster:(ccTime)dt
+{
+	currentVelocity = currentVelocity - (THRUST_ACCELERATION * dt);
+}
+
 -(void)update:(ccTime)dt
 {
 	// Only run the update if we haven't already crashed
 	if(!didCrash)
 	{
+		// Apply gravity so that the current velocity is getting bigger and bigger linearly
 		currentVelocity = currentVelocity + (ACCELERATION * dt);
 		
-		currentVelocity = currentVelocity - (thrusterVelocity * THRUST_ACCELERATION * dt);
-		
+		// Print out what current velocity is to the log
 		NSLog(@"currentVelocity: %f", currentVelocity);
 		
+		// Given the velocity, apply that to the position so that the ship drops downward exponentially
 		CGFloat nextY = self.position.y - currentVelocity;
 		
-		CGPoint nextPosition = ccp(self.position.x, nextY);
-		
-		self.position = nextPosition;
+		// The ship stays at the same x all the time, but its y changes
+		self.position = ccp(self.position.x, nextY);
 		
 		// Have we hit the surface of the moon? If so, we don't go any further down.
 		if(self.position.y <= MOON_SURFACE_Y)
 		{
+			// Cap it, keep the ship here at the surface
 			self.position = ccp(self.position.x, MOON_SURFACE_Y);
 			
 			// Find out if we crashed, or if we won. This depends on how fast the craft was going when it hit the surface.
 			if(currentVelocity > CRASH_VELOCITY)
 			{
+				// We crashed!
 				didCrash = YES;
 			}
 		}

@@ -13,7 +13,6 @@
 {
 	CCSprite *flames;
 	float currentVelocity;
-	float thrusterVelocity;
 }
 
 @property BOOL didCrash;
@@ -27,5 +26,8 @@
  Starts gravity pulling on the space ship. 
  */
 -(void)startGravity;
+
+-(void)pushThruster:(ccTime)dt;
+
 
 @end

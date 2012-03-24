@@ -119,8 +119,14 @@
 		// Show the restart button so the player can restart the game
 		menu.visible = YES;
 	}
-	
-	
+	// If we haven't crashed, see if we need to update the thruster velocity on the spaceship
+	else 
+	{
+		if(isTouchingScreen)
+		{
+			[shipSprite pushThruster:dt];
+		}
+	}
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event 
