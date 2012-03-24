@@ -70,11 +70,12 @@
 		surface.position = ccp(0,0);
 		[self addChild:surface z:SURFACE_Z];
 		
-//		// Create the "restart" button
+		// Create the "restart" button
 		CCMenuItemImage *restartButton = [CCMenuItemImage itemFromNormalImage:@"restart-button.png" selectedImage:@"restart-button.png" target:self selector:@selector(pressedRestart)];
+		restartButton.anchorPoint = ccp(1,1);
 		CCMenu *menu = [CCMenu menuWithItems:restartButton, nil];
-		menu.position = ccp(winSize.width - restartButton.boundingBox.size.width - 10, winSize.height - restartButton.boundingBox.size.height - 10);
-		
+		menu.position = ccp(winSize.width - 10, winSize.height - 10);
+		menu.anchorPoint = ccp(1,1);
 		[self addChild:menu z:RESTART_BUTTON_Z];
 		
 		// The user is not yet touching the screen
