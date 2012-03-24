@@ -1,0 +1,19 @@
+A simple Lunar Lander game for iPad.
+
+The point of the game is to land the spacecraft safely on the surface of the
+moon without crash-landing it.  This is a one-button game where you control
+the thrusters for the spacecraft.  If you don't press the thrusters enough,
+you crash-land.  If you press them too much, you fly back up into space.
+
+To run this game: 
+
+-Get your Xcode development environment set up, instructions from Apple here:
+https://developer.apple.com/devcenter/ios/index.action
+
+-Download the code from GitHub using any of the links above
+
+-Open the LunarLander-RLS.xcodeproj and press "Run"
+
+
+Programming by Amanda Wixted
+Art by BaconBoy123
