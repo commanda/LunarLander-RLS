@@ -13,8 +13,10 @@
 {
 	CCSprite *flames;
 	float currentVelocity;
-	BOOL didCrash;
+	float thrusterVelocity;
 }
+
+@property BOOL didCrash;
 
 /*
  Reset the ship to its starting position.

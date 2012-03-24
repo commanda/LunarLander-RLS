@@ -9,7 +9,7 @@
 #import "AWSpaceShipSprite.h"
 
 #define ACCELERATION 10.0
-
+#define THRUST_ACCELERATION 5.0
 #define START_Y (winSize.height - 100)
 #define MOON_SURFACE_Y 150
 #define CRASH_VELOCITY 10
@@ -17,13 +17,14 @@
 
 @implementation AWSpaceShipSprite
 
+@synthesize didCrash;
+
 -(id)initWithFile:(NSString *)filename
 {
 	self = [super initWithFile:filename];
 	
 	if(self)
 	{
-		currentVelocity = 0;
 		
 		// Create the 2-frame sprite animation for the flames
 		[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"flames.plist"];
@@ -60,6 +61,8 @@
 		
 		// Tell the flames to animate with the animation action we made for it
 		[flames runAction:action];
+		
+		[self startOver];
 	}
 	
 	return self;
@@ -69,6 +72,10 @@
 {
 	CGSize winSize = [[CCDirector sharedDirector] winSize];
 	self.position = ccp(winSize.width/2, START_Y);
+	self.didCrash = NO;
+	currentVelocity = 0;
+	thrusterVelocity = 0;
+	[self unscheduleUpdate];
 }
 
 -(void)startGravity
@@ -78,10 +85,12 @@
 
 -(void)update:(ccTime)dt
 {
-	
+	// Only run the update if we haven't already crashed
 	if(!didCrash)
 	{
 		currentVelocity = currentVelocity + (ACCELERATION * dt);
+		
+		currentVelocity = currentVelocity - (thrusterVelocity * THRUST_ACCELERATION * dt);
 		
 		NSLog(@"currentVelocity: %f", currentVelocity);
 		

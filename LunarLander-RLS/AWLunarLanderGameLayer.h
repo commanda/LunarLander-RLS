@@ -15,6 +15,7 @@
 {
     AWSpaceShipSprite *shipSprite;
 	BOOL isTouchingScreen;
+	CCMenu *menu;
 }
 
 +(CCScene *) scene;

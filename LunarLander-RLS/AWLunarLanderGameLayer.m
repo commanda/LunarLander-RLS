@@ -73,13 +73,19 @@
 		// Create the "restart" button
 		CCMenuItemImage *restartButton = [CCMenuItemImage itemFromNormalImage:@"restart-button.png" selectedImage:@"restart-button.png" target:self selector:@selector(pressedRestart)];
 		restartButton.anchorPoint = ccp(1,1);
-		CCMenu *menu = [CCMenu menuWithItems:restartButton, nil];
+		menu = [CCMenu menuWithItems:restartButton, nil];
 		menu.position = ccp(winSize.width - 10, winSize.height - 10);
 		menu.anchorPoint = ccp(1,1);
 		[self addChild:menu z:RESTART_BUTTON_Z];
 		
+		// The menu starts off as invisible
+		menu.visible = NO;
+		
 		// The user is not yet touching the screen
 		isTouchingScreen = NO;
+		
+		// Register our update function to be called on the tick
+		[self scheduleUpdate];
 		
 		// register to receive targeted touch events
         [[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self
@@ -97,10 +103,24 @@
 	[super dealloc];
 }
 
-
 -(void)pressedRestart
 {
 	NSLog(@"restart");
+	
+	[shipSprite startOver];
+	[shipSprite startGravity];
+}
+
+-(void)update:(ccTime)dt
+{
+	// Check to see if the game is over - if the space ship has crashed or landed successfully
+	if(shipSprite.didCrash)
+	{
+		// Show the restart button so the player can restart the game
+		menu.visible = YES;
+	}
+	
+	
 }
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event 
