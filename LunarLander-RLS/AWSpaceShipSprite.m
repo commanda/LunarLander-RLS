@@ -83,10 +83,21 @@
 -(void)startOver
 {
 	CGSize winSize = [[CCDirector sharedDirector] winSize];
+	
+	// Start out at the top of the screen
 	self.position = ccp(winSize.width/2, START_Y);
+	
+	// We haven't crashed, and we haven't landed
 	self.didCrash = NO;
 	self.didLand = NO;
+	
+	// We just started, so our velocity is 0
 	currentVelocity = 0;
+	
+	// Hide the crash flames
+	crashFlames.visible = NO;
+	
+	// We aren't updating yet until startGravity gets called
 	[self unscheduleUpdate];
 }
 
@@ -97,6 +108,7 @@
 
 -(int)altitude
 {
+	// How high are we above the surface?
 	return self.position.y - MOON_SURFACE_Y;
 }
 
@@ -149,22 +161,35 @@
 
 -(void)becomeEngulfedInFlames
 {
-	for(int i = 0; i < 10; i++)
+	// If we haven't created the crashFlames yet, create them
+	if(!crashFlames)
 	{
-		CCSprite *moreFlames = [self animatingFlamesSprite];
+		// crashFlames is a node, a holder for all the flame sprites we're about to put on it
+		crashFlames = [CCNode node];
 		
-		// Put the anchor point at the middle of the top of this sprite because visually that's where the flames sprout from
-		moreFlames.anchorPoint = ccp(0.5, 1);
-		
-		// Give the flames a random degree of rotation, anywhere from 0 to 359 degrees
-		moreFlames.rotation = arc4random() % 360;
-		
-		// The flames will all sprout from the center of the spaceship
-		moreFlames.position = ccp(self.boundingBox.size.width/2, self.boundingBox.size.height/2);
-		
-		[self addChild:moreFlames];
-		
+		[self addChild:crashFlames];
+	
+		// We'll create 5 flame animations and put them onto the crashFlames node
+		for(int i = 0; i < 5; i++)
+		{
+			CCSprite *moreFlames = [self animatingFlamesSprite];
+			
+			// Put the anchor point at the middle of the top of this sprite because visually that's where the flames sprout from
+			moreFlames.anchorPoint = ccp(0.5, 1);
+			
+			// Give the flames a random degree of rotation, anywhere from 0 to 359 degrees
+			moreFlames.rotation = arc4random() % 360;
+			
+			// The flames will all sprout from the center of the spaceship
+			moreFlames.position = ccp(self.boundingBox.size.width/2, self.boundingBox.size.height/2);
+			
+			[crashFlames addChild:moreFlames];
+			
+		}
 	}
+	
+	crashFlames.visible = YES;
+	
 }
 
 @end

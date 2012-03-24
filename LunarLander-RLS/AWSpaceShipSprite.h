@@ -13,6 +13,7 @@
 {
 	CCSprite *flames;
 	float currentVelocity;
+	CCNode *crashFlames;
 }
 
 @property BOOL didCrash;
