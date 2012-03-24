@@ -16,6 +16,7 @@
 }
 
 @property BOOL didCrash;
+@property BOOL didLand;
 
 /*
  Reset the ship to its starting position.

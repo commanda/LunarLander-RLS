@@ -18,6 +18,7 @@
 @implementation AWSpaceShipSprite
 
 @synthesize didCrash;
+@synthesize didLand;
 
 -(id)initWithFile:(NSString *)filename
 {
@@ -103,7 +104,7 @@
 -(void)update:(ccTime)dt
 {
 	// Only run the update if we haven't already crashed
-	if(!didCrash)
+	if(!didLand)
 	{
 		// Apply gravity so that the current velocity is getting bigger and bigger linearly
 		currentVelocity = currentVelocity + (ACCELERATION * dt);
@@ -120,6 +121,9 @@
 		// Have we hit the surface of the moon? If so, we don't go any further down.
 		if(self.position.y <= MOON_SURFACE_Y)
 		{
+			// We landed.
+			didLand = YES;
+			
 			// Cap it, keep the ship here at the surface
 			self.position = ccp(self.position.x, MOON_SURFACE_Y);
 			
