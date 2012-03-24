@@ -13,6 +13,7 @@
 {
 	CCSprite *flames;
 	float currentVelocity;
+	BOOL didCrash;
 }
 
 /*

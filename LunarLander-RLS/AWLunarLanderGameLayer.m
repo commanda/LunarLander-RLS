@@ -12,6 +12,7 @@
 #define BACKGROUND_Z 1
 #define SURFACE_Z 2
 #define SHIP_Z 3
+#define RESTART_BUTTON_Z 4
 
 @implementation AWLunarLanderGameLayer
 
@@ -36,6 +37,8 @@
 	
 	if(self)
 	{
+		// Get the size of the screen for use in positioning stuff on it
+		CGSize winSize = [[CCDirector sharedDirector] winSize];
 		
 		// Create the background from its image file and add it as a layer 
 		CCSprite *background = [CCSprite spriteWithFile:@"background.png"];
@@ -67,6 +70,13 @@
 		surface.position = ccp(0,0);
 		[self addChild:surface z:SURFACE_Z];
 		
+//		// Create the "restart" button
+		CCMenuItemImage *restartButton = [CCMenuItemImage itemFromNormalImage:@"restart-button.png" selectedImage:@"restart-button.png" target:self selector:@selector(pressedRestart)];
+		CCMenu *menu = [CCMenu menuWithItems:restartButton, nil];
+		menu.position = ccp(winSize.width - restartButton.boundingBox.size.width - 10, winSize.height - restartButton.boundingBox.size.height - 10);
+		
+		[self addChild:menu z:RESTART_BUTTON_Z];
+		
 		// The user is not yet touching the screen
 		isTouchingScreen = NO;
 		
@@ -86,6 +96,11 @@
 	[super dealloc];
 }
 
+
+-(void)pressedRestart
+{
+	NSLog(@"restart");
+}
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event 
 {

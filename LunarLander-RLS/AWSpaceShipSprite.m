@@ -12,6 +12,7 @@
 
 #define START_Y (winSize.height - 100)
 #define MOON_SURFACE_Y 150
+#define CRASH_VELOCITY 10
 
 
 @implementation AWSpaceShipSprite
@@ -77,18 +78,30 @@
 
 -(void)update:(ccTime)dt
 {
-	currentVelocity = currentVelocity + (ACCELERATION * dt);
 	
-	CGFloat nextY = self.position.y - currentVelocity;
-	
-	CGPoint nextPosition = ccp(self.position.x, nextY);
-	
-	self.position = nextPosition;
-	
-	// Have we hit the surface of the moon? If so, we don't go any further down.
-	if(self.position.y <= MOON_SURFACE_Y)
+	if(!didCrash)
 	{
-		self.position = ccp(self.position.x, MOON_SURFACE_Y);
+		currentVelocity = currentVelocity + (ACCELERATION * dt);
+		
+		NSLog(@"currentVelocity: %f", currentVelocity);
+		
+		CGFloat nextY = self.position.y - currentVelocity;
+		
+		CGPoint nextPosition = ccp(self.position.x, nextY);
+		
+		self.position = nextPosition;
+		
+		// Have we hit the surface of the moon? If so, we don't go any further down.
+		if(self.position.y <= MOON_SURFACE_Y)
+		{
+			self.position = ccp(self.position.x, MOON_SURFACE_Y);
+			
+			// Find out if we crashed, or if we won. This depends on how fast the craft was going when it hit the surface.
+			if(currentVelocity > CRASH_VELOCITY)
+			{
+				didCrash = YES;
+			}
+		}
 	}
 	
 }
