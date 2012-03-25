@@ -136,8 +136,11 @@
 	// Only run the update if we haven't already crashed
 	if(!didLand)
 	{
+		// How much does the velocity change every time update is called? It changes by about 0.05 seconds * 10 pixels/second^2
+		float velocityChange = ACCELERATION * dt;
+		
 		// Apply gravity so that the current velocity is getting bigger and bigger linearly
-		currentVelocity = currentVelocity + (ACCELERATION * dt);
+		currentVelocity = currentVelocity + velocityChange;
 		
 		// Print out what current velocity is to the log
 		NSLog(@"currentVelocity: %f", currentVelocity);
