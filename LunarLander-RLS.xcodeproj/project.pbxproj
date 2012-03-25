@@ -144,7 +144,6 @@
 		90216D2214FAD2AA00B5B33D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 90216D2114FAD2AA00B5B33D /* main.m */; };
 		90216D2514FAD2AA00B5B33D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90216D2414FAD2AA00B5B33D /* AppDelegate.m */; };
 		90216D2814FAD2AA00B5B33D /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90216D2714FAD2AA00B5B33D /* RootViewController.m */; };
-		90216D2B14FAD2AA00B5B33D /* HelloWorldLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 90216D2A14FAD2AA00B5B33D /* HelloWorldLayer.m */; };
 		90216D2E14FAD2AA00B5B33D /* grossini_dance_atlas.png in Resources */ = {isa = PBXBuildFile; fileRef = 90216D2D14FAD2AA00B5B33D /* grossini_dance_atlas.png */; };
 		902191A614FE90300095C61B /* moon-surface.png in Resources */ = {isa = PBXBuildFile; fileRef = 902191A514FE90300095C61B /* moon-surface.png */; };
 		9034BB1E14FB30F4000B6071 /* rock.png in Resources */ = {isa = PBXBuildFile; fileRef = 9034BB1B14FB30F4000B6071 /* rock.png */; };
@@ -448,8 +447,6 @@
 		90216D2414FAD2AA00B5B33D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		90216D2614FAD2AA00B5B33D /* RootViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
 		90216D2714FAD2AA00B5B33D /* RootViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
-		90216D2914FAD2AA00B5B33D /* HelloWorldLayer.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HelloWorldLayer.h; sourceTree = "<group>"; };
-		90216D2A14FAD2AA00B5B33D /* HelloWorldLayer.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HelloWorldLayer.m; sourceTree = "<group>"; };
 		90216D2C14FAD2AA00B5B33D /* GameConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameConfig.h; sourceTree = "<group>"; };
 		90216D2D14FAD2AA00B5B33D /* grossini_dance_atlas.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = grossini_dance_atlas.png; path = Resources/grossini_dance_atlas.png; sourceTree = "<group>"; };
 		902191A514FE90300095C61B /* moon-surface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "moon-surface.png"; path = "Resources/moon-surface.png"; sourceTree = "<group>"; };
@@ -527,8 +524,6 @@
 				90216D2414FAD2AA00B5B33D /* AppDelegate.m */,
 				90216D2614FAD2AA00B5B33D /* RootViewController.h */,
 				90216D2714FAD2AA00B5B33D /* RootViewController.m */,
-				90216D2914FAD2AA00B5B33D /* HelloWorldLayer.h */,
-				90216D2A14FAD2AA00B5B33D /* HelloWorldLayer.m */,
 				90890CFA14FAF50E00132FC9 /* AWLunarLanderGameLayer.h */,
 				90890CFB14FAF50E00132FC9 /* AWLunarLanderGameLayer.m */,
 				90890D0114FB02AA00132FC9 /* AWSpaceShipSprite.h */,
@@ -1176,7 +1171,6 @@
 				90216D2214FAD2AA00B5B33D /* main.m in Sources */,
 				90216D2514FAD2AA00B5B33D /* AppDelegate.m in Sources */,
 				90216D2814FAD2AA00B5B33D /* RootViewController.m in Sources */,
-				90216D2B14FAD2AA00B5B33D /* HelloWorldLayer.m in Sources */,
 				90890CFC14FAF50E00132FC9 /* AWLunarLanderGameLayer.m in Sources */,
 				90890D0314FB02AA00132FC9 /* AWSpaceShipSprite.m in Sources */,
 			);
