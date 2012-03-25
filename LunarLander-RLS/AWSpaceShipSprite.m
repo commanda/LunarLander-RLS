@@ -3,7 +3,7 @@
 //  LunarLander-RLS
 //
 //  Created by awixted on 2/26/12.
-//  Copyright 2012 __MyCompanyName__. All rights reserved.
+//  Copyright 2012 Meteor Grove Software. All rights reserved.
 //
 
 #import "AWSpaceShipSprite.h"
