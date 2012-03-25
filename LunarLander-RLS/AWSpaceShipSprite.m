@@ -28,6 +28,7 @@
 
 @synthesize didCrash;
 @synthesize didLand;
+@synthesize isPushingThruster;
 
 -(id)initWithFile:(NSString *)filename
 {
@@ -124,26 +125,26 @@
 -(void)setIsPushingThruster:(BOOL)value
 {
 	thrusterFlames.visible = value;
+	isPushingThruster = value;
 }
 
--(void)pushThruster:(ccTime)dt
-{
-	currentVelocity = currentVelocity - (THRUST_ACCELERATION * dt);
-}
 
 -(void)pseudocodeUpdate:(ccTime)dt
 {
 	// if we haven't already landed,
 		// find out how much we're going to change the velocity 
 		// change the velocity by that much
+		
+		// if the thruster is on
+			// lessen the current velocity
+	
 		// apply the velocity to the position of the ship so it moves
 	
 		// if we've hit the ground
 			// stop the ship from going any further down
 			// if the ship was going too fast, 
 				// we crashed
-	
-	
+
 }
 
 -(void)update:(ccTime)dt
@@ -151,14 +152,26 @@
 	// Only run the update if we haven't already landed
 	if(!didLand)
 	{
+
 		// We accelerate downward at 10 pixels per second per second.
 		// "dt" stands for "delta time" is how much time has passed since the last time this function was called, so it's around 0.05 seconds
 		// Using our number 10, and our number dt, how do we create the value that we're going to use to change our velocity?
 		// How much should the velocity change every 0.05 seconds, if we're trying to make it change 10 pixels every second?
 		float velocityChange = _____;
-		
+
+
 		// Now how do we use the value we made, velocityChange to change our variable currentVelocity?
 		currentVelocity = _____;
+		
+		// If the player is touching the screen, that means they want the thruster to be on.
+		// When the thruster is on, the spaceship should push against gravity
+		if(isPushingThruster)
+		{
+			float thrusterVelocityChange = _______;
+			
+			// Now we apply thrusterVelocityChange to the ship's currentVelocity
+			currentVelocity = _____;
+		}
 		
 		// What do we do here to make the ship move?
 		// We can use our variables position and currentVelocity

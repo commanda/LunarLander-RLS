@@ -167,14 +167,7 @@
 			handledGameover = YES;
 		}
 	}
-	// If we haven't landed, see if we need to update the thruster velocity on the spaceship
-	else 
-	{
-		if(isTouchingScreen)
-		{
-			[shipSprite pushThruster:dt];
-		}
-	}
+	
 	
 	// Update the altitude label's number using the y position of the spaceship
 	int altitude = [shipSprite altitude];

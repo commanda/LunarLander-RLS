@@ -14,10 +14,12 @@
 	CCSprite *thrusterFlames;
 	float currentVelocity;
 	CCNode *crashFlames;
+	
 }
 
 @property BOOL didCrash;
 @property BOOL didLand;
+@property (nonatomic) BOOL isPushingThruster;
 
 /*
  Reset the ship to its starting position.
@@ -28,12 +30,6 @@
  Starts gravity pulling on the space ship. 
  */
 -(void)startGravity;
-
-/*
- Let the ship know that the thruster is still on and that it has been dt number of seconds since the last time we updated.
- This allows the ship to calculate its gravity value based on how long the thruster has been pushed down.
- */
--(void)pushThruster:(ccTime)dt;
 
 /*
  Treat the thruster as an on/off so we can display the fire sprite animation under the spaceship.
