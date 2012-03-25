@@ -14,7 +14,6 @@
 @interface AWLunarLanderGameLayer : CCLayer <CCTargetedTouchDelegate>
 {
     AWSpaceShipSprite *shipSprite;
-	BOOL isTouchingScreen;
 	CCMenu *menu;
 	CCLabelTTF *altitudeLabel;
 	CCSprite *wonSprite;
