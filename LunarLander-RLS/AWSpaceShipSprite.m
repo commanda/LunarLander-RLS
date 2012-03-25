@@ -136,7 +136,13 @@
 	// Only run the update if we haven't already landed
 	if(!didLand)
 	{
-		// Apply gravity so that the current velocity is getting bigger and bigger linearly
+		// We accelerate downward at 10 pixels per second per second.
+		// "dt" stands for "delta time" is how much time has passed since the last time this function was called, so it's around 0.05 seconds
+		// Using our number 10, and our number dt, how do we create the value that we're going to use to change our velocity?
+		// How much should the velocity change every 0.05 seconds, if we're trying to make it change 10 pixels every second?
+		float velocityChange = _____;
+		
+		// Now how do we use the value we made, velocityChange to change our variable currentVelocity?
 		currentVelocity = _____;
 		
 		// What do we do here to make the ship move?
