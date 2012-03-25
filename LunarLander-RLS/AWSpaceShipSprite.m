@@ -33,15 +33,15 @@
 		[self addChild:batchNode];
 		
 		// Get the flames animation from our creator function
-		flames = [self animatingFlamesSprite];
+		thrusterFlames = [self animatingFlamesSprite];
 		
 		// Anchor it in the middle horizontally and vertically
-		flames.anchorPoint = ccp(0.5, 0.5);
-		flames.position = ccp(self.boundingBox.size.width/2, 0);
-		[self addChild:flames z:-1];
+		thrusterFlames.anchorPoint = ccp(0.5, 0.5);
+		thrusterFlames.position = ccp(self.boundingBox.size.width/2, 0);
+		[self addChild:thrusterFlames z:-1];
 		
 		// The flames start out as invisible because they only show up when the user is activating the thruster.
-		flames.visible = NO;
+		thrusterFlames.visible = NO;
 		
 		[self startOver];
 	}
@@ -112,9 +112,9 @@
 	return self.position.y - MOON_SURFACE_Y;
 }
 
--(void)isPushingThruster:(BOOL)value
+-(void)setIsPushingThruster:(BOOL)value
 {
-	flames.visible = value;
+	thrusterFlames.visible = value;
 }
 
 -(void)pushThruster:(ccTime)dt

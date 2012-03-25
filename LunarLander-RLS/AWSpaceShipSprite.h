@@ -11,7 +11,7 @@
 
 @interface AWSpaceShipSprite : CCSprite 
 {
-	CCSprite *flames;
+	CCSprite *thrusterFlames;
 	float currentVelocity;
 	CCNode *crashFlames;
 }
@@ -38,7 +38,7 @@
 /*
  Treat the thruster as an on/off so we can display the fire sprite animation under the spaceship.
  */
--(void)isPushingThruster:(BOOL)value;
+-(void)setIsPushingThruster:(BOOL)value;
 
 /*
  Returns the altitude relative to the landing spot

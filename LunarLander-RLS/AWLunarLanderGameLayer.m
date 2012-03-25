@@ -187,7 +187,7 @@
 	isTouchingScreen = YES;
 	
 	// Tell the ship that the thruster should appear activated
-	[shipSprite isPushingThruster:YES];
+	[shipSprite setIsPushingThruster:YES];
 	
 	return YES;
 }
@@ -198,7 +198,7 @@
 	isTouchingScreen = NO;
 	
 	// Tell the ship that the thruster should stop appearing activated
-	[shipSprite isPushingThruster:NO];
+	[shipSprite setIsPushingThruster:NO];
 }
 
 -(void)ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
@@ -208,7 +208,7 @@
 	isTouchingScreen = NO;
 
 	// Tell the ship that the thruster should stop appearing activated
-	[shipSprite isPushingThruster:NO];
+	[shipSprite setIsPushingThruster:NO];
 }
 
 @end
