@@ -131,6 +131,21 @@
 	currentVelocity = currentVelocity - (THRUST_ACCELERATION * dt);
 }
 
+-(void)pseudocodeUpdate:(ccTime)dt
+{
+	// if we haven't already landed,
+		// find out how much we're going to change the velocity 
+		// change the velocity by that much
+		// apply the velocity to the position of the ship so it moves
+	
+		// if we've hit the ground
+			// stop the ship from going any further down
+			// if the ship was going too fast, 
+				// we crashed
+	
+	
+}
+
 -(void)update:(ccTime)dt
 {
 	// Only run the update if we haven't already landed
