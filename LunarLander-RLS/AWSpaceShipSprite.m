@@ -133,32 +133,26 @@
 
 -(void)update:(ccTime)dt
 {
-	// Only run the update if we haven't already crashed
+	// Only run the update if we haven't already landed
 	if(!didLand)
 	{
 		// Apply gravity so that the current velocity is getting bigger and bigger linearly
-		currentVelocity = currentVelocity + (ACCELERATION * dt);
+		currentVelocity = _____;
 		
-		// Print out what current velocity is to the log
-		NSLog(@"currentVelocity: %f", currentVelocity);
+		// What do we do here to make the ship move?
+		// We can use our variables position and currentVelocity
+		_____;
 		
-		// Given the velocity, apply that to the position so that the ship drops downward exponentially
-		CGFloat nextY = self.position.y - currentVelocity;
-		
-		// The ship stays at the same x all the time, but its y changes
-		self.position = ccp(self.position.x, nextY);
-		
-		// Have we hit the surface of the moon? If so, we don't go any further down.
-		if(self.position.y <= MOON_SURFACE_Y)
+		// How do we know when to stop the ship from moving?
+		if(_____)
 		{
-			// We landed.
+			// Now we know that we landed, so set that variable to YES so that the game (the other file) knows about it and can bring up the "restart" button.
 			didLand = YES;
 			
-			// Cap it, keep the ship here at the surface
-			self.position = ccp(self.position.x, MOON_SURFACE_Y);
+			// What should we do with the position of the ship to stop it from keeping going downward?
 			
-			// Find out if we crashed, or if we won. This depends on how fast the craft was going when it hit the surface.
-			if(currentVelocity > CRASH_VELOCITY)
+			// How do we find out if we crashed or if we won? Hint: This depends on how fast the ship was going when it hit the surface.
+			if(_____)
 			{
 				// We crashed!
 				didCrash = YES;
