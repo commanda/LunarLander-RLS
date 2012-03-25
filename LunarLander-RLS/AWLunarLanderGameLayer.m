@@ -167,7 +167,7 @@
 			handledGameover = YES;
 		}
 	}
-	// If we haven't crashed, see if we need to update the thruster velocity on the spaceship
+	// If we haven't landed, see if we need to update the thruster velocity on the spaceship
 	else 
 	{
 		if(isTouchingScreen)
