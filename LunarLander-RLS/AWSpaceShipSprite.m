@@ -8,10 +8,19 @@
 
 #import "AWSpaceShipSprite.h"
 
+// Downward acceleration - gravity. This is in pixels per second per second.
 #define ACCELERATION 10.0
-#define THRUST_ACCELERATION 20.0
+
+// How much the thruster affects the ship's velocity
+#define THRUST_ACCELERATION 40.0
+
+// Where the ship starts out at - 100 px down from the top of the screen
 #define START_Y (winSize.height - 100)
-#define MOON_SURFACE_Y 150
+
+// Where the landing point is - this many pixels up from the bottom of the screen
+#define MOON_SURFACE_Y 160
+
+// The maximum velocity the ship can be traveling at for a safe landing to occur
 #define CRASH_VELOCITY 10
 
 
