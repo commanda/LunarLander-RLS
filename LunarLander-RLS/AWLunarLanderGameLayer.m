@@ -129,6 +129,8 @@
 	
 	handledGameover = NO;
 	
+	menu.visible = NO;
+	
 	// Tell the ship to prepare itself for restarting the game
 	[shipSprite startOver];
 	[shipSprite startGravity];
