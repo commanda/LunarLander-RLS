@@ -539,10 +539,6 @@
 		90216B7614FAD2A300B5B33D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				908EAF63151E2B68008FB577 /* lose-image.png */,
-				908EAF64151E2B68008FB577 /* won-image.png */,
-				908EAF60151E2560008FB577 /* LiquidCrystal-Bold.otf */,
-				90EC6B89151D5DC400976862 /* restart-button.png */,
 				90890CFD14FAFB3200132FC9 /* background.png */,
 				90890CFF14FAFF7300132FC9 /* Default-Portrait~ipad.png */,
 				90216B7714FAD2A300B5B33D /* Default.png */,
@@ -558,9 +554,13 @@
 				90216B8514FAD2A300B5B33D /* Icon@2x.png */,
 				90216B8714FAD2A300B5B33D /* Info.plist */,
 				90216B8814FAD2A300B5B33D /* iTunesArtwork */,
+				908EAF60151E2560008FB577 /* LiquidCrystal-Bold.otf */,
+				908EAF63151E2B68008FB577 /* lose-image.png */,
 				902191A514FE90300095C61B /* moon-surface.png */,
+				90EC6B89151D5DC400976862 /* restart-button.png */,
 				9034BB1B14FB30F4000B6071 /* rock.png */,
 				90890D0414FB054A00132FC9 /* ship.png */,
+				908EAF64151E2B68008FB577 /* won-image.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
