@@ -147,6 +147,31 @@
 
 }
 
+-(void)updateWithoutComments:(ccTime)dt
+{
+	if(!didLand)
+	{
+		float velocityChange = _____;
+		currentVelocity = _____;
+		if(isPushingThruster)
+		{
+			float thrusterVelocityChange = ______;
+			currentVelocity = ______;
+		}
+		
+		_____;
+		
+		if(_____)
+		{
+			didLand = YES;
+			if(_____)
+			{
+				didCrash = YES;
+			}
+		}
+	}
+}
+
 -(void)update:(ccTime)dt
 {
 	// Only run the update if we haven't already landed
