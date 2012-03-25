@@ -28,6 +28,7 @@
 
 @synthesize didCrash;
 @synthesize didLand;
+@synthesize isPushingThruster;
 
 -(id)initWithFile:(NSString *)filename
 {
@@ -124,12 +125,9 @@
 -(void)setIsPushingThruster:(BOOL)value
 {
 	thrusterFlames.visible = value;
+	isPushingThruster = value;
 }
 
--(void)pushThruster:(ccTime)dt
-{
-	currentVelocity = currentVelocity - (THRUST_ACCELERATION * dt);
-}
 
 -(void)update:(ccTime)dt
 {
@@ -141,6 +139,11 @@
 		
 		// Apply gravity so that the current velocity is getting bigger and bigger linearly
 		currentVelocity = currentVelocity + velocityChange;
+		
+		if(isPushingThruster)
+		{
+			currentVelocity = currentVelocity - (THRUST_ACCELERATION * dt);
+		}
 		
 		// Print out what current velocity is to the log
 		NSLog(@"currentVelocity: %f", currentVelocity);
