@@ -100,9 +100,6 @@
 		loseSprite.visible = NO;
 		[self addChild:loseSprite z:HUD_Z];
 		
-		// The user is not yet touching the screen
-		isTouchingScreen = NO;
-		
 		// Register our update function to be called on the tick
 		[self scheduleUpdate];
 		
@@ -176,9 +173,6 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event 
 {
-	
-	isTouchingScreen = YES;
-	
 	// Tell the ship that the thruster should appear activated
 	[shipSprite setIsPushingThruster:YES];
 	
@@ -187,19 +181,12 @@
 
 -(void)ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	// The user lifted their finger off the screen
-	isTouchingScreen = NO;
-	
 	// Tell the ship that the thruster should stop appearing activated
 	[shipSprite setIsPushingThruster:NO];
 }
 
 -(void)ccTouchCancelled:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	
-	// The user's touch event was interrupted 
-	isTouchingScreen = NO;
-
 	// Tell the ship that the thruster should stop appearing activated
 	[shipSprite setIsPushingThruster:NO];
 }
