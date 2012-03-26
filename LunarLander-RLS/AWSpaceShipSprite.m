@@ -175,49 +175,55 @@
 -(void)update:(ccTime)dt
 {
 	// Only run the update if we haven't already landed
-//	if(!didLand)
-//	{
-//
-//		// We accelerate downward at 10 pixels per second per second.
-//		// "dt" stands for "delta time" is how much time has passed since the last time this function was called, so it's around 0.05 seconds
-//		// Using our number 10, and our number dt, how do we create the value that we're going to use to change our velocity?
-//		// How much should the velocity change every 0.05 seconds, if we're trying to make it change 10 pixels every second?
-//		float velocityChange = _____;
-//
-//
-//		// Now how do we use the value we made, velocityChange to change our variable currentVelocity?
-//		currentVelocity = _____;
-//		
-//		// If the player is touching the screen, that means they want the thruster to be on.
-//		// When the thruster is on, the spaceship should push against gravity
-//		if(isPushingThruster)
-//		{
-//			float thrusterVelocityChange = _______;
-//			
-//			// Now we apply thrusterVelocityChange to the ship's currentVelocity
-//			currentVelocity = _____;
-//		}
-//		
-//		// What do we do here to make the ship move?
-//		// We can use our variables position and currentVelocity
-//		_____;
-//		
-//		// How do we know when to stop the ship from moving?
-//		if(_____)
-//		{
-//			// Now we know that we landed, so set that variable to YES so that the game (the other file) knows about it and can bring up the "restart" button.
-//			didLand = YES;
-//			
-//			// What should we do with the position of the ship to stop it from keeping going downward?
-//			
-//			// How do we find out if we crashed or if we won? Hint: This depends on how fast the ship was going when it hit the surface.
-//			if(_____)
-//			{
-//				// We crashed!
-//				didCrash = YES;
-//			}
-//		}
-//	}
+	if(!didLand)
+	{
+
+		// We accelerate downward at 10 pixels per second per second.
+		// "dt" stands for "delta time" is how much time has passed since the last time this function 
+		// was called, so it's around 0.05 seconds
+		// Using our number 10, and our number dt, how do we create the value that we're going to 
+		// use to change our velocity?
+		// How much should the velocity change every 0.05 seconds, if we're trying to make it change 
+		// by 10 pixels every second?
+		float velocityChange = _____;
+
+
+		// Now how do we use the value we made, velocityChange to change our variable currentVelocity?
+		currentVelocity = _____;
+		
+		// If the player is touching the screen, that means they want the thruster to be on.
+		// When the thruster is on, the spaceship should push against gravity
+		if(isPushingThruster)
+		{
+			float thrusterVelocityChange = _______;
+			
+			// Now we apply thrusterVelocityChange to the ship's currentVelocity
+			currentVelocity = _____;
+		}
+		
+		// What do we do here to make the ship move?
+		// We can use our variables position and currentVelocity
+		_____;
+		
+		// How do we know when to stop the ship from moving?
+		if(_____)
+		{
+			// Now we know that we landed, so set that variable to YES so that the game (the other 
+			// file) knows about it and can bring up the "restart" button.
+			didLand = YES;
+			
+			// What should we do with the position of the ship to stop it from keeping going downward?
+			_______;
+			
+			// How do we find out if we crashed or if we won? Hint: This depends on how fast the 
+			// ship was going when it hit the surface.
+			if(_____)
+			{
+				// We crashed!
+				didCrash = YES;
+			}
+		}
+	}
 	
 }
 
