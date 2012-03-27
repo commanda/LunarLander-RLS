@@ -115,6 +115,7 @@
 	
 	// Set our regular not-crashed look
 	[self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"ship.png"]];
+	self.anchorPoint = ccp(0.5, 0.5);
 	
 	// We aren't updating yet until startGravity gets called
 	[self unscheduleUpdate];
@@ -187,6 +188,7 @@
 -(void)appearCrashed
 {
 	[self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"spacecraft_wrecked.png"]];
+	self.anchorPoint = ccp(0.5, 1);
 }
 
 -(void)becomeEngulfedInFlames
