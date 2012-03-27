@@ -159,6 +159,7 @@
 		908EAF66151E2B68008FB577 /* won-image.png in Resources */ = {isa = PBXBuildFile; fileRef = 908EAF64151E2B68008FB577 /* won-image.png */; };
 		90EC6B8A151D5DC400976862 /* restart-button.png in Resources */ = {isa = PBXBuildFile; fileRef = 90EC6B89151D5DC400976862 /* restart-button.png */; };
 		90F11B9915219938006571DD /* spacecraft_wrecked.png in Resources */ = {isa = PBXBuildFile; fileRef = 90F11B9815219938006571DD /* spacecraft_wrecked.png */; };
+		90F11BA415219FCC006571DD /* ship.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90F11BA315219FCC006571DD /* ship.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -466,6 +467,7 @@
 		908EAF64151E2B68008FB577 /* won-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "won-image.png"; path = "Resources/won-image.png"; sourceTree = "<group>"; };
 		90EC6B89151D5DC400976862 /* restart-button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "restart-button.png"; path = "Resources/restart-button.png"; sourceTree = "<group>"; };
 		90F11B9815219938006571DD /* spacecraft_wrecked.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spacecraft_wrecked.png; path = Resources/spacecraft_wrecked.png; sourceTree = "<group>"; };
+		90F11BA315219FCC006571DD /* ship.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = ship.plist; path = Resources/ship.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -561,6 +563,7 @@
 				902191A514FE90300095C61B /* moon-surface.png */,
 				90EC6B89151D5DC400976862 /* restart-button.png */,
 				9034BB1B14FB30F4000B6071 /* rock.png */,
+				90F11BA315219FCC006571DD /* ship.plist */,
 				90890D0414FB054A00132FC9 /* ship.png */,
 				90F11B9815219938006571DD /* spacecraft_wrecked.png */,
 				908EAF64151E2B68008FB577 /* won-image.png */,
@@ -1045,6 +1048,7 @@
 				908EAF65151E2B68008FB577 /* lose-image.png in Resources */,
 				908EAF66151E2B68008FB577 /* won-image.png in Resources */,
 				90F11B9915219938006571DD /* spacecraft_wrecked.png in Resources */,
+				90F11BA415219FCC006571DD /* ship.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

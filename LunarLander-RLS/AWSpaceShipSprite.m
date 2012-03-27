@@ -30,9 +30,14 @@
 @synthesize didLand;
 @synthesize isPushingThruster;
 
--(id)initWithFile:(NSString *)filename
+-(id)initDefault
 {
-	self = [super initWithFile:filename];
+	[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"ship.plist"];
+	CCSpriteBatchNode *batchNode = [CCSpriteBatchNode batchNodeWithFile:@"ship.png"];
+	
+	self = [super initWithSpriteFrameName:@"ship.png"];
+	
+	[self addChild:batchNode];
 	
 	if(self)
 	{
@@ -58,6 +63,7 @@
 	
 	return self;
 }
+
 
 -(CCSprite *)animatingFlamesSprite
 {
@@ -106,6 +112,9 @@
 	
 	// Hide the crash flames
 	crashFlames.visible = NO;
+	
+	// Set our regular not-crashed look
+	[self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"ship.png"]];
 	
 	// We aren't updating yet until startGravity gets called
 	[self unscheduleUpdate];
@@ -174,6 +183,12 @@
 	
 }
 
+
+-(void)appearCrashed
+{
+	[self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"spacecraft_wrecked.png"]];
+}
+
 -(void)becomeEngulfedInFlames
 {
 	// If we haven't created the crashFlames yet, create them
@@ -182,10 +197,10 @@
 		// crashFlames is a node, a holder for all the flame sprites we're about to put on it
 		crashFlames = [CCNode node];
 		
-		[self addChild:crashFlames];
+		[self addChild:crashFlames z:-1];
 	
 		// We'll create 5 flame animations and put them onto the crashFlames node
-		for(int i = 0; i < 5; i++)
+		for(int i = 0; i < 2; i++)
 		{
 			CCSprite *moreFlames = [self animatingFlamesSprite];
 			
