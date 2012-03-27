@@ -209,8 +209,9 @@
 			// Put the anchor point at the middle of the top of this sprite because visually that's where the flames sprout from
 			moreFlames.anchorPoint = ccp(0.5, 1);
 			
-			// Give the flames a random degree of rotation, anywhere from 0 to 359 degrees
-			moreFlames.rotation = arc4random() % 360;
+			// Give the flames a random degree of rotation, pointing up, so between 90 and 270 degrees
+			// (because 0 degrees is straight down in this system)
+			moreFlames.rotation = 90 + (arc4random() % 180);
 			
 			// The flames will all sprout from the center of the spaceship
 			moreFlames.position = ccp(self.boundingBox.size.width/2, self.boundingBox.size.height/2);
