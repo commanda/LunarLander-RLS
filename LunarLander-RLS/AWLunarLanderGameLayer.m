@@ -54,8 +54,8 @@
 		// Add it to the screen
 		[self addChild:background z:BACKGROUND_Z];
 		
-		// Create the space ship sprite with the ship image
-		shipSprite = [[AWSpaceShipSprite alloc] initWithFile:@"ship.png"];
+		// Create the space ship sprite
+		shipSprite = [[AWSpaceShipSprite alloc] initDefault];
 		
 		// We'll anchor it in the middle of itself - halfway in the x axis and halfway in the y axis
 		shipSprite.anchorPoint = ccp(0.5, 0.5);
@@ -154,6 +154,7 @@
 			{
 				// The player lost because the ship crash landed
 				loseSprite.visible = YES;
+				[shipSprite appearCrashed];
 				[shipSprite becomeEngulfedInFlames];
 			}
 			else 

@@ -30,9 +30,14 @@
 @synthesize didLand;
 @synthesize isPushingThruster;
 
--(id)initWithFile:(NSString *)filename
+-(id)initDefault
 {
-	self = [super initWithFile:filename];
+	[[CCSpriteFrameCache sharedSpriteFrameCache] addSpriteFramesWithFile:@"ship.plist"];
+	CCSpriteBatchNode *batchNode = [CCSpriteBatchNode batchNodeWithFile:@"ship.png"];
+	
+	self = [super initWithSpriteFrameName:@"ship.png"];
+	
+	[self addChild:batchNode];
 	
 	if(self)
 	{
@@ -58,6 +63,7 @@
 	
 	return self;
 }
+
 
 -(CCSprite *)animatingFlamesSprite
 {
@@ -106,6 +112,10 @@
 	
 	// Hide the crash flames
 	crashFlames.visible = NO;
+	
+	// Set our regular not-crashed look
+	[self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"ship.png"]];
+	self.anchorPoint = ccp(0.5, 0.5);
 	
 	// We aren't updating yet until startGravity gets called
 	[self unscheduleUpdate];
@@ -227,6 +237,13 @@
 	
 }
 
+
+-(void)appearCrashed
+{
+	[self setDisplayFrame:[[CCSpriteFrameCache sharedSpriteFrameCache] spriteFrameByName:@"spacecraft_wrecked.png"]];
+	self.anchorPoint = ccp(0.5, 1);
+}
+
 -(void)becomeEngulfedInFlames
 {
 	// If we haven't created the crashFlames yet, create them
@@ -235,18 +252,19 @@
 		// crashFlames is a node, a holder for all the flame sprites we're about to put on it
 		crashFlames = [CCNode node];
 		
-		[self addChild:crashFlames];
+		[self addChild:crashFlames z:-1];
 	
 		// We'll create 5 flame animations and put them onto the crashFlames node
-		for(int i = 0; i < 5; i++)
+		for(int i = 0; i < 2; i++)
 		{
 			CCSprite *moreFlames = [self animatingFlamesSprite];
 			
 			// Put the anchor point at the middle of the top of this sprite because visually that's where the flames sprout from
 			moreFlames.anchorPoint = ccp(0.5, 1);
 			
-			// Give the flames a random degree of rotation, anywhere from 0 to 359 degrees
-			moreFlames.rotation = arc4random() % 360;
+			// Give the flames a random degree of rotation, pointing up, so between 90 and 270 degrees
+			// (because 0 degrees is straight down in this system)
+			moreFlames.rotation = 90 + (arc4random() % 180);
 			
 			// The flames will all sprout from the center of the spaceship
 			moreFlames.position = ccp(self.boundingBox.size.width/2, self.boundingBox.size.height/2);

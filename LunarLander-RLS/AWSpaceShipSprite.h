@@ -14,12 +14,13 @@
 	CCSprite *thrusterFlames;
 	float currentVelocity;
 	CCNode *crashFlames;
-	
 }
 
 @property BOOL didCrash;
 @property BOOL didLand;
 @property (nonatomic) BOOL isPushingThruster;
+
+-(id)initDefault;
 
 /*
  Reset the ship to its starting position.
@@ -45,6 +46,11 @@
  Returns a new flames sprite that's animating
  */
 -(CCSprite *)animatingFlamesSprite;
+
+/*
+ Change to our crashed image
+ */
+-(void)appearCrashed;
 
 /*
  Become engulfed in flames!
